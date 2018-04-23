@@ -1,0 +1,627 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+        <title>SPH Login  Straits Times</title> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <meta name="viewport" content="width=device-width,user-scalable=no" />
+        <meta name="company" content="Singapore Press Holdings Ltd" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+        <link rel="icon" href="sso/st_online/favicon.ico" />
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+
+        <script type="text/javascript" src="/RegAuth2/scripts/global.js"></script>
+        <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+        <!--Latest compiled and minified CSS--> 
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+
+        <!--Optional theme--> 
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500" />
+        <link rel="stylesheet" href="assets/css/form-elements.css" />
+        <!--Latest compiled and minified JavaScript--> 
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <style>
+           @media screen and (min-width: 768px) {
+                  .coldivide{
+                      border-left: 1px lightgrey  solid;
+                  }
+                  .vcenter {
+                    margin-top: 1%
+                   }
+                   .logo-dt{
+                       display: block!important;
+                   }
+                   .fpassword{
+                       padding-top: 5px!important; 
+                       padding-left: 10px!important;
+                       padding-right: 0px!important;
+                       float: right!important;
+                       line-height:20px!important;
+                   }
+                   .checkbox{
+                       width:45%!important;
+                       line-height:20px!important;
+                       padding-right: 0px!important; 
+                       margin-top: 5px!important;
+                   }
+                    .carousel-ind{
+                        bottom: -20%!important;
+                    }
+                   
+            }
+             @media screen and (max-width: 768px) {
+                 .logo-mb{
+                       display: block!important;
+                  }
+                 .sngCol{
+                       margin-top: 5%
+                   }
+                   .imgSize{
+                       width:50%;
+                       margin-left:20%;
+                   }
+                   .horizonatal-line {
+                        margin-left: 25%!important;
+                   }
+                   .fpassword{
+                       padding-bottom: 10px!important; 
+                   }
+                    .carousel-ind{
+                        bottom: -30%!important;
+                    }
+             }
+            
+             .carousel-ind li{
+                 border: 1px solid #337ab7!important;
+             }
+             .carousel-ind .active{
+                 background-color: #337ab7!important;
+             }
+             .diveiderTxt{
+                        color: #333;
+                        font-weight: 700;
+             }
+            .horizonatal-line {
+                        width: 165px;
+                        border-top: 1px solid #ccc;
+                        margin: auto;
+             }
+            .horizonatal-line span {
+                 background: #fff;
+                 position: relative;
+                 width: 30px;
+                 text-align: center;
+                 top: -11px;
+                 left: 66px;
+            }
+            
+            .page-header{
+                margin: 0 0 20px !important;
+            }
+            #logoImage{
+                margin-left: 2%;
+            }
+             .checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
+                position: relative!important;
+            }
+        </style>
+        <script>
+            $(function(){
+                $('.carousel').carousel({
+                  interval: 2000
+                });
+            });
+        </script>
+       
+    </head>
+    <body>
+        <div>
+        
+        <div class="container-fluid vcenter">
+            <div class="col-md-10 col-sm-offset-1">
+                <div class="row">
+                    <div class="col-sm-6 coldivide sngCol col-sm-push-6 ">
+                        <div class="col-lg-10 logo-mb" style="margin-bottom:20px;display:none!important;">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+    
+        <a href="http://sph.com.sg">
+            <img id="logoImage" name="logoImage" class="img-responsive" src="sso/st_online/logo.png" />
+        </a>
+    
+    <script>
+        var image = document.getElementById('logoImage');
+        image.onerror = function () {
+            var logoImages = document.getElementsByName("logoImage");
+            for(var i=0; i&lt;logoImages.length; i++){
+                logoImages[i].src = "sso/common/logo.png";
+            }
+        };
+    </script>
+</h1>
+               
+                        </div>
+                        
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<!-- CSS -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500" />
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/form-elements.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png" />
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png" />
+         
+
+    
+    
+        <div class="col-sm-13">
+            <div class="form-box" style="margin-top:0px;">
+                <div class="form-top" style="background: #F8F8F8!important;padding-bottom: 0px!important;">
+                        <div class="form-top-left">
+                                <h3>Login with mySPH</h3>
+                        </div>
+                        <div class="form-top-right">
+                                <img class="img-responsive" style="padding-top:15px!important;" src="/RegAuth2/images/mysph_logo.png" />
+                        </div>
+                </div>
+               
+                <div class="form-bottom" style="background: #F8F8F8!important;padding-bottom: 0px!important;">
+                       
+                            
+                            
+                              <form method="post" name="loginForm" id="loginForm" action="" onsubmit="processLogin(this); return false;" autocomplete="off" autocapitalize="off">
+                            
+                        
+
+                            
+                                <p class="text-danger">
+                                    
+                                        
+                                            Invalid login id and/or password, please try again.
+                                        
+
+                                        
+
+                                        
+                                    
+                                </p>
+                                                 
+                            <div class="form-group">
+                               <input class="form-control" name="j_username" id="j_username" placeholder="Login ID" type="text" maxlength="50" autocomplete="off" autocapitalize="off" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" name="j_password" id="j_password" placeholder="Password" type="password" maxlength="40" onkeypress="return submitenter(this, event)" />
+                            </div>
+                            <div>
+                                
+                                    <div class="col-sm-5 checkbox">
+                                        <label>
+                                            <input type="checkbox" id="Remember" name="Remember" /> Remember me
+                                        </label>
+                                    </div>
+                                
+                                <div class="col-sm-6 fpassword">
+                                    <a href="/RegAuth2/sphPasswordChallenge.html?svc=st_online&#10;                                    ">Forgot Password?</a> 
+                                </div>
+                            </div>
+                            <input type="hidden" name="login" id="login" value="submit" />
+                            <button type="submit" class="btn">Sign in!</button>
+                        </form>
+                            
+				
+								
+				
+			
+                                
+                                <p>Don't have a <font color="#337ab7">mySPH</font> account? Please 
+                                 
+                                     
+                                         <a href="&#10;                                         https://www.sphsubscription.com.sg/eshop/?r=products/newsubscriptionpackages&amp;pcode=ST&amp;utm_medium=online&amp;utm_source=homepageheader&amp;utm_campaign=stproductpage&amp;utm_term=tactical" target="_blank">
+                                     
+                                     
+                                 
+                                             <b>register</b></a>.
+                                </p>
+                             
+
+                             
+                        </div>
+                </div>
+                
+	                        
+        </div>
+    
+
+            
+
+<script type="text/javascript">
+&lt;!--//
+
+    document.loginForm.j_username.focus();
+
+    function saveUsername(theForm) {
+        var expires = new Date();
+        expires.setTime(expires.getTime() + 24 * 30 * 60 * 60 * 1000); // sets it for approx 30 days.
+        setCookie("username",theForm.j_username.value,expires,"/RegAuth2/");
+    }
+
+    function validateForm(form) {                                                               
+        return validateRequired(form); 
+    }
+
+    function validateFormST(form) {                                                               
+        return validateRequiredST(form); 
+    }
+
+    function validateFormBTInvest(form) {                                                               
+        return validateRequiredBTInvest(form); 
+    }
+
+    function passwordHint() {
+        if (document.loginForm.j_username.value.length == 0) {
+            alert("The Login Id field must be filled in to get a password hint sent to you.");
+            document.loginForm.j_username.focus();
+        } else {
+            location.href="/RegAuth2/passwordHint.html?username=" + document.loginForm.j_username.value;     
+        }
+    }
+
+    function required () { 
+        this.aa = new Array("j_username", "Login ID is a required field.");
+        this.ab = new Array("j_password", "Password is a required field.");
+    }
+
+    function requiredST () {
+        this.aa = new Array("j_username", "Login Id is a required field.", new Function ("varName", " return this[varName];"));
+        this.ab = new Array("j_password", "Password is a required field.", new Function ("varName", " return this[varName];"));        
+        //this.ac = new Array("tnc", "Please read and agree to our Member Terms and Conditions.", new Function ("varName", " return this[varName];"));
+    }
+
+    function requiredBTInvest () {
+        this.aa = new Array("j_username", "Login Id is a required field.", new Function ("varName", " return this[varName];"));
+        this.ab = new Array("j_password", "Password is a required field.", new Function ("varName", " return this[varName];"));        
+        this.ac = new Array("bti_form_agree", "Please read and agree to our Member Terms and Conditions.", new Function ("varName", " return this[varName];"));
+    }
+
+        function submitenter(myfield,e){
+                var keycode;
+                if (window.event) keycode = window.event.keyCode;
+                else if (e) keycode = e.which;
+                else return true;
+                if (keycode == 13){
+                   processLogin(document.loginForm);
+                   return false;
+                }else{
+                   return true;
+                }
+        }
+
+        function submitenterST(myfield,e){
+                var keycode;
+                if (window.event) keycode = window.event.keyCode;
+                else if (e) keycode = e.which;
+                else return true;
+                if (keycode == 13){
+                   processLoginST(document.loginForm);
+                   return false;
+                }else{
+                   return true;
+                }
+        }
+
+        function processLogin(form){
+                var status = new Boolean(validateForm(form));
+                if (status == true){
+                        //saveUsername(form);
+                        document.amLogin.IDToken1.value = document.loginForm.j_username.value;
+                        document.amLogin.IDToken2.value = document.loginForm.j_password.value;
+                        if (document.loginForm.Remember &amp;&amp; document.loginForm.Remember.checked){
+                                document.amLogin.iPSPCookie.value = 'yes';
+
+                                if (document.amLogin.goto.value.indexOf('rm=1') &gt; -1) {}
+                                else {
+                                        var appendGoto = false;
+                                        var separator = (document.amLogin.goto.value.indexOf('?') &gt; -1) ? "&amp;" : "?";
+
+                                        if (document.amLogin.goto.value.indexOf('cdcservlet') &gt; -1) {
+                                                var targetIndex = document.amLogin.goto.value.indexOf('TARGET');
+
+                                                if (targetIndex &gt; -1) {
+                                                        separator = (document.amLogin.goto.value.indexOf('%3F') &gt; -1) ? "%26" : "%3F";
+
+                                                        var targetA = document.amLogin.goto.value.substring(0, targetIndex);
+                                                        var targetB = document.amLogin.goto.value.substring(targetIndex);
+                                                        var targetBIndex = targetB.indexOf('&amp;');
+
+                                                        if (targetBIndex &gt; -1) {
+                                                                var targetBa = targetB.substring(0, targetBIndex);
+                                                                var targetBb = targetB.substring(targetBIndex);
+
+                                                                document.amLogin.goto.value = targetA + targetBa + separator + "rm=1" + targetBb;
+                                                                appendGoto = true;
+                                                        }
+                                                }
+                                        }
+
+                                        if (appendGoto == false) { 
+                                                separator = (document.amLogin.goto.value.indexOf('?') &gt; -1) ? "&amp;" : "?";
+                                                document.amLogin.goto.value = document.amLogin.goto.value + separator + "rm=1";
+                                        }
+
+                                }
+
+                        }
+                        document.amLogin.submit();
+                }
+        } 
+
+        function processLoginST(form){
+                var status = new Boolean(validateFormST(form));
+                if (status == true){
+                        //saveUsername(form);
+                        document.amLogin.IDToken1.value = document.loginForm.j_username.value;
+                        document.amLogin.IDToken2.value = document.loginForm.j_password.value;			
+                        if (document.loginForm.Remember &amp;&amp; document.loginForm.Remember.checked){
+                                document.amLogin.iPSPCookie.value = 'yes';
+
+                                if (document.amLogin.goto.value.indexOf('rm=1') &gt; -1) {}
+                                else {
+                                        var appendGoto = false;
+                                        var separator = (document.amLogin.goto.value.indexOf('?') &gt; -1) ? "&amp;" : "?";
+
+                                        if (document.amLogin.goto.value.indexOf('cdcservlet') &gt; -1) {
+                                                var targetIndex = document.amLogin.goto.value.indexOf('TARGET');
+
+                                                if (targetIndex &gt; -1) {
+                                                        separator = (document.amLogin.goto.value.indexOf('%3F') &gt; -1) ? "%26" : "%3F";
+
+                                                        var targetA = document.amLogin.goto.value.substring(0, targetIndex);
+                                                        var targetB = document.amLogin.goto.value.substring(targetIndex);
+                                                        var targetBIndex = targetB.indexOf('&amp;');
+
+                                                        if (targetBIndex &gt; -1) {
+                                                                var targetBa = targetB.substring(0, targetBIndex);
+                                                                var targetBb = targetB.substring(targetBIndex);
+
+                                                                document.amLogin.goto.value = targetA + targetBa + separator + "rm=1" + targetBb;
+                                                                appendGoto = true;
+                                                        }
+                                                }
+                                        }
+
+                                        if (appendGoto == false) { 
+                                                separator = (document.amLogin.goto.value.indexOf('?') &gt; -1) ? "&amp;" : "?";
+                                                document.amLogin.goto.value = document.amLogin.goto.value + separator + "rm=1";
+                                        }
+
+                                }
+
+                        }
+                        document.amLogin.submit();
+                }
+        }
+
+        function processLoginBTInvest(form){
+                var status = new Boolean(validateFormBTInvest(form));
+                if (status == true){
+                        //saveUsername(form);
+                        document.amLogin.IDToken1.value = document.loginForm.j_username.value;
+                        document.amLogin.IDToken2.value = document.loginForm.j_password.value;
+                        if (document.loginForm.Remember &amp;&amp; document.loginForm.Remember.checked == true){
+                                document.amLogin.iPSPCookie.value = 'yes';
+
+                                if (document.amLogin.goto.value.indexOf('rm=1') &gt; -1) {
+                                    
+                                } else {
+                                        var appendGoto = false;
+                                        var separator = (document.amLogin.goto.value.indexOf('?') &gt; -1) ? "&amp;" : "?";
+
+                                        if (document.amLogin.goto.value.indexOf('cdcservlet') &gt; -1) {
+                                                var targetIndex = document.amLogin.goto.value.indexOf('TARGET');
+
+                                                if (targetIndex &gt; -1) {
+                                                        separator = (document.amLogin.goto.value.indexOf('%3F') &gt; -1) ? "%26" : "%3F";
+
+                                                        var targetA = document.amLogin.goto.value.substring(0, targetIndex);
+                                                        var targetB = document.amLogin.goto.value.substring(targetIndex);
+                                                        var targetBIndex = targetB.indexOf('&amp;');
+
+                                                        if (targetBIndex &gt; -1) {
+                                                                var targetBa = targetB.substring(0, targetBIndex);
+                                                                var targetBb = targetB.substring(targetBIndex);
+
+                                                                document.amLogin.goto.value = targetA + targetBa + separator + "rm=1" + targetBb;
+                                                                appendGoto = true;
+                                                        }
+                                                }
+                                        }
+
+                                        if (appendGoto == false) { 
+                                                separator = (document.amLogin.goto.value.indexOf('?') &gt; -1) ? "&amp;" : "?";
+                                                document.amLogin.goto.value = document.amLogin.goto.value + separator + "rm=1";
+                                        }
+
+                                }
+
+                        }
+                        document.amLogin.submit();
+                }
+        } 
+
+    //	document.write('&lt;form method="post" id="amLogin" name="amLogin"	action="https://acc-auth.sphdigital.com:443/amserver/UI/Login" autocomplete="off"&gt;');
+
+        document.write('&lt;form method="post" id="amLogin" name="amLogin"	action="/RegAuth2/preLogin.html" autocomplete="off"&gt;');
+        document.write('&lt;input type="hidden" name="IDToken1" id="IDToken1" value="" /&gt;');
+        document.write('&lt;input type="hidden" name="IDToken2" id="IDToken2" value="" /&gt;');
+        document.write('&lt;input type="hidden" name="iPSPCookie" id="iPSPCookie" value="false" /&gt;');
+        document.write('&lt;input type="hidden" name="goto" value="/amserver/cdcservlet?TARGET=http%3A%2F%2Fwww.straitstimes.com%3A80%2Fdummypost%2Fampostpreserve%3F8acda2bd-e2bc-8141-baaa-c5f160c3e10d&amp;amp;amp;RequestID=ECB23A2FD628A11497754696B2D9BD3B91CC4D2AE8E23960EC8E7369856A1A0B&amp;amp;amp;MajorVersion=1&amp;amp;amp;MinorVersion=0&amp;amp;amp;ProviderID=http%3A%2F%2Fwww.straitstimes.com%3A80%2Famagent&amp;amp;amp;IssueInstant=2018-04-23T08%3A39%3A23Z"&gt;');
+        document.write('&lt;input type="hidden" name="location" value="' + location.href + '"&gt;');
+        document.write('&lt;/form&gt;');
+
+        
+//--&gt;     
+</script><form method="post" id="amLogin" name="amLogin" action="/RegAuth2/preLogin.html" autocomplete="off"><input type="hidden" name="IDToken1" id="IDToken1" value="" /><input type="hidden" name="IDToken2" id="IDToken2" value="" /><input type="hidden" name="iPSPCookie" id="iPSPCookie" value="false" /><input type="hidden" name="goto" value="/amserver/cdcservlet?TARGET=http%3A%2F%2Fwww.straitstimes.com%3A80%2Fdummypost%2Fampostpreserve%3F8acda2bd-e2bc-8141-baaa-c5f160c3e10d&amp;amp;RequestID=ECB23A2FD628A11497754696B2D9BD3B91CC4D2AE8E23960EC8E7369856A1A0B&amp;amp;MajorVersion=1&amp;amp;MinorVersion=0&amp;amp;ProviderID=http%3A%2F%2Fwww.straitstimes.com%3A80%2Famagent&amp;amp;IssueInstant=2018-04-23T08%3A39%3A23Z" /><input type="hidden" name="location" value="https://acc-reg.sphdigital.com/RegAuth2/sphLogin.html?svc=st_online&amp;goto=%2Famserver%2Fcdcservlet%3FTARGET%3Dhttp%253A%252F%252Fwww.straitstimes.com%253A80%252Fdummypost%252Fampostpreserve%253F8acda2bd-e2bc-8141-baaa-c5f160c3e10d%26RequestID%3DECB23A2FD628A11497754696B2D9BD3B91CC4D2AE8E23960EC8E7369856A1A0B%26MajorVersion%3D1%26MinorVersion%3D0%26ProviderID%3Dhttp%253A%252F%252Fwww.straitstimes.com%253A80%252Famagent%26IssueInstant%3D2018-04-23T08%253A39%253A23Z&amp;error=true" /></form>      
+
+                    </div>
+                     <div class="col-sm-6 col-sm-pull-6 sngCol">
+                        <div class="col-lg-10 logo-dt col-sm-offset-1" style="margin-bottom:20px;display:none;">
+                            
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>
+    
+        <a href="http://sph.com.sg">
+            <img id="logoImage" name="logoImage" class="img-responsive" src="sso/st_online/logo.png" />
+        </a>
+    
+    <script>
+        var image = document.getElementById('logoImage');
+        image.onerror = function () {
+            var logoImages = document.getElementsByName("logoImage");
+            for(var i=0; i&lt;logoImages.length; i++){
+                logoImages[i].src = "sso/common/logo.png";
+            }
+        };
+    </script>
+</h1>
+               
+                        </div>
+                         <div id="carousel-example-generic" class="col-lg-11 col-sm-offset-1 carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators carousel-ind">
+                              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                              <div class="item active">
+                                <img class="img-responsive " src="/RegAuth2/images/dd_logo.png" />
+                              </div>
+                              <div class="item">
+                               <img class="img-responsive " src="/RegAuth2/images/mysph_slide_2.jpg" />
+                              </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <a class="left carousel-control" style="background:none!important;" href="#carousel-example-generic" role="button" data-slide="prev">
+                              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                              <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" style="background:none!important;" href="#carousel-example-generic" role="button" data-slide="next">
+                              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                              <span class="sr-only">Next</span>
+                            </a>
+                          </div>
+                         
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="container-fluid vcenter">
+            <div id="footer"> 
+                    <div class="col-lg-9 col-lg-offset-1">
+                        <hr />
+                        <h6 class="pull-right text-muted">
+                            © 2018 Singapore Press Holdings Ltd. Regn. No. 198402668E
+                            <img style="vertical-align: bottom" src="sso/common/sph_favicon.png" />
+                        </h6>
+                    </div>
+            </div>
+        </div>
+       
+        
+        
+            <script type="text/javascript" src="//tag.aticdn.net/561120/smarttag.js"></script>
+            
+            <script type="text/javascript">
+                var _data = {
+                'level1':"538340",
+                'level2':"12",
+                    
+                'title':document.title,
+                'visitorcat':'1'
+                };
+            </script>
+	
+	
+            <script type="text/javascript">
+                var tag = new ATInternet.Tracker.Tag({site: _data.level1}); //define ATI tag object and overwrite site ID to be ZB dev
+                tag.page.set({
+                level2:_data.level2, //Level 2: Login
+                name: encodeURIComponent(_data.title) //e.g. ST Login, BT Login etc.
+                });
+                //site custom variables
+                tag.customVars.set({
+                    site: {
+                    1: encodeURIComponent(_data.title),
+                    2: encodeURIComponent(document.location.href),
+                    6: _data.visitorcat
+                            
+          
+                    }
+                });
+                tag.dispatch();
+            </script>
+                      
+        
+       </div>
+    
+
+</body></html>

@@ -1,0 +1,44 @@
+<acceptance-test-run title="Signing to Straits times" name="Signing to Straits times" description="" steps="3" successful="2" failures="1" skipped="0" ignored="0" pending="0" annotated-result="FAILURE" result="FAILURE" duration="16595" timestamp="2018-04-23T18:30:04.751+08:00" session-id="99b4071555844fb7eb9096e1e288eff3">
+  <user-story id="signing-to-straits-times" name="Signing to Straits times" path="src/test/resources/features/SignIn.Feature"/>
+  <tags>
+    <tag name="Signing to Straits times" type="feature"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0" name="" description=""/>
+    </datasets>
+    <headers>
+      <header>ID</header>
+      <header>Password</header>
+    </headers>
+    <rows>
+      <row result="FAILURE">
+        <value>digitaltest1</value>
+        <value>Password1</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {ID=digitaltest1, Password=Password1}" result="FAILURE">
+    <test-step result="SUCCESS" duration="14502">
+      <screenshots>
+        <screenshot image="890e6f4cb1f7200c6b5ffb5217070b87.png"/>
+      </screenshots>
+      <description>Given I have user details for sign in</description>
+    </test-step>
+    <test-step result="SUCCESS" duration="937">
+      <screenshots>
+        <screenshot image="6b20bc77ad20940117987833389d1e4f.png"/>
+      </screenshots>
+      <description>When I click on login digitaltest1 Password1</description>
+    </test-step>
+    <test-step result="FAILURE" duration="1001">
+      <screenshots>
+        <screenshot image="6b20bc77ad20940117987833389d1e4f.png" source="pagesource4230577167355737794.html.txt"/>
+      </screenshots>
+      <description>Then I should be able to see my digitaltest1 account page</description>
+      <error>java.lang.AssertionError: Element should be visible</error>
+      <exception>java.lang.AssertionError:Element should be visible&#xd;
+[com.vinoth.test.pages.StraitTimesHomePage.verifySignIn(StraitTimesHomePage.java:35), com.vinoth.test.steps.SignInScenariosSteps.iShouldBeAbleToSeeMyIDAccountPage(SignInScenariosSteps.java:48), ✽.Then I should be able to see my digitaltest1 account page(src/test/resources/features/SignIn.Feature:7)]</exception>
+    </test-step>
+  </test-group>
+</acceptance-test-run>

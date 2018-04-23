@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Signing to Straits times" skipped="0" tests="1" time="16.6" timestamp="2018-04-113 06:30:04"><testcase name="Signing to Straits times"><failure message="Element should be visible" type="java.lang.AssertionError">Element should be visible</failure><system-err>Element should be visible&#13;
+com.vinoth.test.pages.StraitTimesHomePage.verifySignIn(StraitTimesHomePage.java:35)&#13;
+com.vinoth.test.steps.SignInScenariosSteps.iShouldBeAbleToSeeMyIDAccountPage(SignInScenariosSteps.java:48)&#13;
+✽.Then I should be able to see my digitaltest1 account page(src/test/resources/features/SignIn.Feature:7)&#13;
+</system-err></testcase></testsuite>

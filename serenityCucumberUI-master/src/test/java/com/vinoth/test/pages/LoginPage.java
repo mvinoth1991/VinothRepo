@@ -8,26 +8,23 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends PageObject {
+    @FindBy(xpath = "//li[@class='nav-logout']")
+    private WebElement logoutBtn;
 
-@FindBy(xpath = "//img[@id='logoImage']")
-@CacheLookup
-    private WebElement loginLogo;
-
-@FindBy(id = "j_username")
+    @FindBy(id = "j_username")
     @CacheLookup
     private WebElement userNameTextField;
 
-@FindBy(id="j_password")
+    @FindBy(id="j_password")
     private WebElement pwdTextField;
 
-@FindBy(className = "btn")
+    @FindBy(className = "btn")
     private WebElement signinButton;
 
-@FindBy(xpath = "//li[@class='nav-logout']")
-private WebElement logoutBtn;
+    @FindBy(xpath = "//div[@class='page-header']")
+    private WebElement userAlreadySignedIn;
 
-@FindBy(xpath = "//a[@name='login-user-name']")
-private WebElement assertLoginName;
+    String userMessage="User Name and Password are already in use";
 
 public LoginPage enterUserName(String ID)
 {
@@ -52,17 +49,13 @@ public LoginPage clickOnSubmit()
     Log.info("Clicking on submit button");
     signinButton.isDisplayed();
     signinButton.click();
+    if(userAlreadySignedIn.getText().equals(userMessage)){
+        Log.info("You may have multiple browser windows open using the same identity, or\n" +
+                "    someone may be sharing your password.");
+    }
     return this;
 }
 
-public LoginPage verifySignIn(String ID)
-{
-    Log.info("Verifying login ");
-    shouldNotBeVisible(signinButton);
-    shouldBeVisible(logoutBtn);
-    assertLoginName.getText().contains(ID);
-    return this;
-}
 
 public LoginPage clickOnLogout()
 {

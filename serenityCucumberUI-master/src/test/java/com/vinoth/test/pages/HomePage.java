@@ -4,6 +4,7 @@ import java.util.Map;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -20,9 +21,13 @@ public class HomePage extends PageObject {
 
 
 
-    @FindBy(xpath = "//div[@class='navbar-user  dropdown-menu']/ul/li")
+    String URL= "http://www.straitstimes.com/";
+    @FindBy(xpath = "//li[@class='nav-login']")
     @CacheLookup
     private WebElement login;
+
+    @FindBy(xpath = "//button[@class='animated fadeIn']")
+    private WebElement closeAd;
 
     private final String pageLoadedText = "The Straits Times";
     private final String pageUrl = "http://www.straitstimes.com/";
@@ -52,10 +57,31 @@ public class HomePage extends PageObject {
      * @param
      */
     public HomePage clickOnLogin() {
-        Actions action = new Actions(driver);
-        action.moveToElement(login).build().perform();
+//       Actions action = new Actions(driver);
+//       action.moveToElement(login).build().perform();
+//        closeAd.click();
         login.click();
         return this;
+    }
+
+    public HomePage openBroserAndCloseAd(){
+        driver=getDriver();
+        getDriver().navigate().to(URL);
+        driver.manage().window().maximize();
+        //int size = driver.findElements(By.tagName("iframe")).size();
+        //System.out.println(size);
+       try{
+        WebElement frame=driver.findElement(By.xpath("//div[@id='eyeDiv']/div/iframe"));
+        driver.switchTo().frame(frame);
+        driver.findElement(By.xpath("//*[@id=\"close-button\"]")).click();
+        driver.switchTo().defaultContent();
+       }
+       catch (Exception e){
+       }
+        //driver.switchTo().frame(driver.findElement(By.id("click-through-button")));
+       // driver.findElement(By.id("close-button")).click(); //Close Ad
+        //driver.switchTo().defaultContent(); // Return to main window
+        return  this;
     }
     /**
      * Verify that the page loaded completely.

@@ -1,0 +1,37 @@
+<acceptance-test-run title="Signing to Straits times" name="Signing to Straits times" description="" steps="3" successful="0" failures="0" errors="1" skipped="2" ignored="0" pending="0" annotated-result="ERROR" result="ERROR" duration="443" timestamp="2018-04-23T12:25:35.232+08:00">
+  <user-story id="signing-to-straits-times" name="Signing to Straits times" path="src/test/resources/features/SignIn.feature"/>
+  <tags>
+    <tag name="Signing to Straits times" type="feature"/>
+  </tags>
+  <examples>
+    <datasets>
+      <dataset startRow="0" rowCount="0" name="" description=""/>
+    </datasets>
+    <headers>
+      <header>ID</header>
+      <header>Password</header>
+    </headers>
+    <rows>
+      <row result="ERROR">
+        <value>digitaltest1</value>
+        <value>Password1</value>
+      </row>
+    </rows>
+  </examples>
+  <test-group name="[1] {ID=digitaltest1, Password=Password1}" result="ERROR">
+    <test-group name="Given I have user details for sign in" result="ERROR">
+      <test-step result="ERROR" duration="0">
+        <description>Verify page loaded</description>
+        <error>java.lang.NullPointerException</error>
+        <exception>java.lang.NullPointerException:null&#xd;
+[com.google.common.base.Preconditions.checkNotNull(Preconditions.java:210), com.vinoth.test.pages.HomePage.verifyPageLoaded(HomePage.java:67), com.vinoth.test.steps.SignInScenariosSteps.iHaveUserDetailsForSignUpEmailPasswordName(SignInScenariosSteps.java:28)]</exception>
+      </test-step>
+    </test-group>
+    <test-step result="SKIPPED" duration="0">
+      <description>When I click on login digitaltest1 and Password1</description>
+    </test-step>
+    <test-step result="SKIPPED" duration="0">
+      <description>Then I should be able to see my digitaltest1 account page</description>
+    </test-step>
+  </test-group>
+</acceptance-test-run>
