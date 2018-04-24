@@ -1,9 +1,13 @@
 package com.vinoth.test.pages;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+import jline.internal.Log;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
+import org.jruby.RubyProcess;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
@@ -26,8 +30,9 @@ public class HomePage extends PageObject {
     @CacheLookup
     private WebElement login;
 
-    @FindBy(xpath = "//button[@class='animated fadeIn']")
+    @FindBy(xpath = "//iframe/..//*[contains(@id, 'close')]")
     private WebElement closeAd;
+
 
     private final String pageLoadedText = "The Straits Times";
     private final String pageUrl = "http://www.straitstimes.com/";
@@ -60,29 +65,37 @@ public class HomePage extends PageObject {
 //       Actions action = new Actions(driver);
 //       action.moveToElement(login).build().perform();
 //        closeAd.click();
+        waitFor(login).waitUntilVisible();
         login.click();
         return this;
     }
 
-    public HomePage openBroserAndCloseAd(){
+    public HomePage openBrowser(){
         driver=getDriver();
         getDriver().navigate().to(URL);
         driver.manage().window().maximize();
-        //int size = driver.findElements(By.tagName("iframe")).size();
-        //System.out.println(size);
-       try{
-        WebElement frame=driver.findElement(By.xpath("//div[@id='eyeDiv']/div/iframe"));
-        driver.switchTo().frame(frame);
-        driver.findElement(By.xpath("//*[@id=\"close-button\"]")).click();
-        driver.switchTo().defaultContent();
-       }
-       catch (Exception e){
-       }
-        //driver.switchTo().frame(driver.findElement(By.id("click-through-button")));
-       // driver.findElement(By.id("close-button")).click(); //Close Ad
-        //driver.switchTo().defaultContent(); // Return to main window
-        return  this;
-    }
+        return this;
+        }
+
+    public HomePage closeTheAd(){
+        List<WebElement> iframList = new ArrayList<WebElement>();
+            iframList =driver.findElements(By.xpath("//iframe"));
+            if(iframList.size()>0) {
+                for (WebElement temp : iframList) {
+                    if (temp.isDisplayed()) {
+                        Log.info("here");
+                        try {
+                            driver.switchTo().frame(temp).findElement(By.xpath("//*[contains(@id, 'close')]")).click();
+                            driver.switchTo().defaultContent();
+                            break;
+                        } catch (Exception e) {
+                            Log.info("Error");
+                        }
+                    }
+                }
+            }
+            return this;
+        }
     /**
      * Verify that the page loaded completely.
      *

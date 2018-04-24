@@ -32,7 +32,8 @@ public class SignInScenariosSteps {
 
     @Given("^I have user details for sign in$")
     public void iHaveUserDetailsForSignUpEmailPasswordName() throws Throwable {
-        homePage.openBroserAndCloseAd();
+        homePage.openBrowser();
+        homePage.closeTheAd();
         homePage.clickOnLogin();
     }
 
