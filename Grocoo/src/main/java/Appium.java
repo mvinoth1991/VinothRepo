@@ -20,9 +20,9 @@ public class Appium {
         capabilities.setCapability("deviceName", "Emulator");
 //        capabilities.setCapability("browserName","chrome");
         capabilities.setCapability("automationName","appium");
-        capabilities.setCapability("appPackage","com.android.calculator2");
-        capabilities.setCapability("appActivity","com.android.calculator2.Calculator");
-//        capabilities.setCapability("app", "C:/APKs/Calculator_v1.2.3_apkpure.com.apk");
+        capabilities.setCapability("appPackage","com.grocoo.customer");
+        capabilities.setCapability("appActivity","com.grocoo.customer.MainActivity");
+//        capabilities.setCapability("app", "C:/Vinoth-Repo/VinothRepo/Grocoo/com.facebook.katana_2018-05-05.apk");
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 //        AppiumDriver<MobileElement> driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
