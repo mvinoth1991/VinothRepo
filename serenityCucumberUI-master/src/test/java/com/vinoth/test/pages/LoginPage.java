@@ -7,51 +7,47 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+import java.sql.Timestamp;
+
 public class LoginPage extends PageObject {
+    private String enteredEmailid;
     @FindBy(xpath = "//li[@class='nav-logout']")
     private WebElement logoutBtn;
 
-    @FindBy(id = "j_username")
-    @CacheLookup
-    private WebElement userNameTextField;
+    @FindBy(xpath = "//input[@id='email_create']")
+    private WebElement emailTextBox;
 
-    @FindBy(id="j_password")
-    private WebElement pwdTextField;
+    @FindBy(id = "SubmitCreate")
+    private WebElement createAnAccountBtn;
 
-    @FindBy(className = "btn")
-    private WebElement signinButton;
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    private WebElement alertDangerMsg;
 
-    @FindBy(xpath = "//div[@class='page-header']")
-    private WebElement userAlreadySignedIn;
+    public static String alertMsg="An account using this email address has already been registered. Please enter a valid password or request a new one. ";
+    public static String getRandomNumber() {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        long randomLong=timestamp.getTime();
+        return String.valueOf(randomLong);
+    }
 
-    String userMessage="User Name and Password are already in use";
-
-public LoginPage enterUserName(String ID)
+public LoginPage enterEmailID(String emailID)
 {
     Log.info("Entering ID in Username field");
-    userNameTextField.isDisplayed();
-    userNameTextField.sendKeys(ID);
+    emailTextBox.isDisplayed();
+    this.enteredEmailid= emailID+getRandomNumber().substring(3)+"@gmail.com";
+    emailTextBox.sendKeys(enteredEmailid);
     Log.info("ID entered successfully");
     return this;
 }
 
-public LoginPage enterPwd(String pwd)
-{
-    Log.info("Entering password in password field");
-    pwdTextField.isDisplayed();
-    pwdTextField.sendKeys(pwd);
-    Log.info("Password is entered successfully");
-    return this;
-}
-
-public LoginPage clickOnSubmit()
+public LoginPage clickOnCreateAccount()
 {
     Log.info("Clicking on submit button");
-    signinButton.isDisplayed();
-    signinButton.click();
-    if(userAlreadySignedIn.getText().equals(userMessage)){
+    createAnAccountBtn.isDisplayed();
+    createAnAccountBtn.click();
+    if(alertDangerMsg.getText().equals(alertMsg)){
         Log.info("You may have multiple browser windows open using the same identity, or\n" +
-                "    someone may be sharing your password.");
+                "    someone someone has already reqisterd using your email id.");
     }
     return this;
 }

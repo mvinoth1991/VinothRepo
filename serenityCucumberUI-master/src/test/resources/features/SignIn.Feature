@@ -3,8 +3,8 @@ Feature: Signing to Straits times
 
   Scenario Outline: Signing to Straits times
     Given I have user details for sign in
-    When I click on login <ID> <Password>
-    Then I should be able to see my <ID> account page
+    When I click on register new account <emailID>
+    Then I should be able to see my <emailID> account page
   Examples:
-      | ID             | Password |
-      | digitaltest1   | Password1 |
+      | emailID        |
+      | digitaltest   |

@@ -33,15 +33,13 @@ public class SignInScenariosSteps {
     @Given("^I have user details for sign in$")
     public void iHaveUserDetailsForSignUpEmailPasswordName() throws Throwable {
         homePage.openBrowser();
-        homePage.closeTheAd();
         homePage.clickOnLogin();
     }
 
-    @When("^I click on login (.*) (.*)$")
-    public void iClickOnLoginIDPassword(String ID, String password) throws Throwable {
-        loginPage.enterUserName(ID);
-        loginPage.enterPwd(password);
-        loginPage.clickOnSubmit();
+    @When("^I click on register new account (.*)$")
+    public void iClickOnLoginIDPassword(String ID) throws Throwable {
+        loginPage.enterEmailID(ID);
+        loginPage.clickOnCreateAccount();
     }
 
     @Then("^I should be able to see my (.*) account page$")

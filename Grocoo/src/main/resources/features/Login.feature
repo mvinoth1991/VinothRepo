@@ -1,5 +1,7 @@
 Feature: Login
 
+  Background:
+
   Scenario: Enter user name and password
     Given Enter the user name <username>
     Then enter the password <password>

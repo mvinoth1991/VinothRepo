@@ -3,7 +3,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
-public class LoginSteps {
+public class LoginSteps extends Appium {
     @Given("^Enter the user name <username>$")
     public void enterTheUserNameUsername() throws Throwable {
 

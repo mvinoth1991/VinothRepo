@@ -25,17 +25,13 @@ public class HomePage extends PageObject {
 
 
 
-    String URL= "http://www.straitstimes.com/";
-    @FindBy(xpath = "//li[@class='nav-login']")
+    String URL= "http://automationpractice.com/index.php";
+    @FindBy(xpath = "//a[@class='login']")
     @CacheLookup
     private WebElement login;
 
-    @FindBy(xpath = "//iframe/..//*[contains(@id, 'close')]")
-    private WebElement closeAd;
-
-
-    private final String pageLoadedText = "The Straits Times";
-    private final String pageUrl = "http://www.straitstimes.com/";
+    private final String pageLoadedText = "Create an account";
+    private final String pageUrl = "http://automationpractice.com/index.php";
 
     public HomePage() {
     }
@@ -77,25 +73,6 @@ public class HomePage extends PageObject {
         return this;
         }
 
-    public HomePage closeTheAd(){
-        List<WebElement> iframList = new ArrayList<WebElement>();
-            iframList =driver.findElements(By.xpath("//iframe"));
-            if(iframList.size()>0) {
-                for (WebElement temp : iframList) {
-                    if (temp.isDisplayed()) {
-                        Log.info("here");
-                        try {
-                            driver.switchTo().frame(temp).findElement(By.xpath("//*[contains(@id, 'close')]")).click();
-                            driver.switchTo().defaultContent();
-                            break;
-                        } catch (Exception e) {
-                            Log.info("Error");
-                        }
-                    }
-                }
-            }
-            return this;
-        }
     /**
      * Verify that the page loaded completely.
      *
