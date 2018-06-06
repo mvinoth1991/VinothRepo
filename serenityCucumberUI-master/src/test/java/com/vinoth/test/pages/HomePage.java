@@ -2,13 +2,8 @@ package com.vinoth.test.pages;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import jline.internal.Log;
-import net.serenitybdd.core.pages.PageObject;
-import net.thucydides.core.annotations.DefaultUrl;
-import net.thucydides.core.annotations.Step;
-import org.jruby.RubyProcess;
 import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -17,8 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-@DefaultUrl("http://www.straitstimes.com/")
-public class HomePage extends PageObject {
+
+public class HomePage {
     private Map<String, String> data;
     private WebDriver driver;
     private int timeout = 15;
@@ -61,14 +56,13 @@ public class HomePage extends PageObject {
 //       Actions action = new Actions(driver);
 //       action.moveToElement(login).build().perform();
 //        closeAd.click();
-        waitFor(login).waitUntilVisible();
+        login.isDisplayed();
         login.click();
         return this;
     }
 
     public HomePage openBrowser(){
-        driver=getDriver();
-        getDriver().navigate().to(URL);
+        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         return this;
         }

@@ -1,18 +1,16 @@
 package com.vinoth.test.pages;
 
 import jline.internal.Log;
-import net.thucydides.core.pages.PageObject;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 import java.sql.Timestamp;
 
-public class LoginPage extends PageObject {
+public class LoginPage extends HomePage {
     private String enteredEmailid;
     @FindBy(xpath = "//li[@class='nav-logout']")
     private WebElement logoutBtn;
+
 
     @FindBy(xpath = "//input[@id='email_create']")
     private WebElement emailTextBox;
@@ -56,7 +54,7 @@ public LoginPage clickOnCreateAccount()
 public LoginPage clickOnLogout()
 {
     Log.info("Trying to click on Logout");
-    shouldBeVisible(logoutBtn);
+    logoutBtn.isDisplayed();
     logoutBtn.click();
     return this;
 }

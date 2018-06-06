@@ -1,11 +1,9 @@
 package com.vinoth.test.pages;
 
-import com.sun.java.util.jar.pack.Instruction;
 import jline.internal.Log;
-import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.server.handler.FindElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
@@ -20,26 +18,29 @@ public class HOOQHomePage extends LoginPage {
     private WebElement genderRadioButton;
 
     @FindBy(id = "customer_firstname")
-    private WebElement firstName;
+    private WebElement firstNameTextBox;
 
     @FindBy(id = "customer_lastname")
-    private WebElement lastName;
+    private WebElement lastNameTextBox;
 
     @FindBy(id = "email")
     private WebElement selectTopStory;
 
     @FindBy(id = "passwd")
-    private WebElement password;
+    private WebElement passwordTextbox;
 
-    @FindBy(id = "uniform-days")
-    private WebElement imageElementVisible;
+    @FindBy(id = "days")
+    private WebElement daysDropDown;
 
-    @FindBy(className = "account_creation")
+    @FindBy(id = "account_creation")
     private WebElement accountCreationSection;
 
-    @FindBy(xpath = "//img[@id='logoImage']")
+    @FindBy(id = "months")
     @CacheLookup
-    private WebElement loginLogo;
+    private WebElement monthsDropDown;
+
+    @FindBy(id="years")
+    private WebElement yearsDropDown;
 
     @FindBy(id = "account-creation_form")
     private WebElement personalInfoForm;
@@ -65,28 +66,47 @@ public class HOOQHomePage extends LoginPage {
     }
         return this;
     }
-    public HOOQHomePage verifySignIn(String ID)
+    public HOOQHomePage enterFirstName(String firstName)
     {
-        Log.info("Verifying login ");
-        shouldNotBeVisible(loginLogo);
-        shouldBeVisible(logoutBtn);
-        assertLoginName.getText().contains(ID);
+        Log.info("Entering first name");
+        firstNameTextBox.isDisplayed();
+        firstNameTextBox.click();
+        firstNameTextBox.sendKeys(firstName+getRandomNumber().substring(3));
         return this;
     }
 
-    public HOOQHomePage selectTopStory()
+    public HOOQHomePage enterLastName(String lastName)
     {
-        Log.info("Trying to click on TopStory ");
-        selectTopStory.isDisplayed();
-        selectTopStory.click();
+        Log.info("Entering last name ");
+        lastNameTextBox.isDisplayed();
+        lastNameTextBox.click();
+        lastNameTextBox.sendKeys(lastName+getRandomNumber().substring(3));
         return this;
     }
 
-    public HOOQHomePage verifyVideoAndImage() {
-        Log.info("Trying to verify video and image elements");
-        waitFor(videoElementVisible);
-        shouldBeVisible(videoElementVisible);
-        shouldBeVisible(imageElementVisible);
+    public HOOQHomePage enterPassword(String password) {
+        Log.info("Entering password");
+        passwordTextbox.isDisplayed();
+        passwordTextbox.click();
+        passwordTextbox.sendKeys(password);
+        return this;
+    }
+
+    public HOOQHomePage enterDay(String day){//23
+        Select days= new Select(daysDropDown);
+        days.selectByVisibleText(day);
+        return this;
+    }
+
+    public HOOQHomePage enterMonth(String month){//June
+        Select months= new Select(monthsDropDown);
+        months.selectByVisibleText(month);
+        return this;
+    }
+
+    public HOOQHomePage enterYear(String year){//1991
+        Select years= new Select(yearsDropDown);
+        years.selectByVisibleText(year);
         return this;
     }
 
