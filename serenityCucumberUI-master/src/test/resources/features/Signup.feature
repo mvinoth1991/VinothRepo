@@ -8,4 +8,4 @@ Feature: Signing up
     And user should be able to sign up successfully
     Examples:
       |gender|fname|lname|pwd|day|month|year|emailID|firstname|lastname|city|country|state|
-      |Mr    |pertest |personalltest|Test@123|22|6|1991|digitaltest|addrfirst|addlast|Singapore|21|1|
+      |Mr    |pertest |pertest|Test@123|22|6|1991|digitaltest|addrfirst|addlast|Singapore|21|1|

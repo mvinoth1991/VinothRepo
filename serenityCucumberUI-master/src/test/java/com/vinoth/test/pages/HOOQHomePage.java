@@ -98,6 +98,7 @@ public class HOOQHomePage extends PageObject {
     }
     else{
             addressFName.isDisplayed();
+            addressFName.clear();
             addressFName.click();
             addressFName.sendKeys(firstName);
         }
@@ -106,14 +107,15 @@ public class HOOQHomePage extends PageObject {
 
     public HOOQHomePage enterLastName(String lastName) {
         Log.info("Entering last name ");
-        if(lastName.contains("add")){
+        if(lastName.contains("per")){
         lastNameTextBox.isDisplayed();
         lastNameTextBox.click();
         lastNameTextBox.sendKeys(lastName);
     }else{
-        addressFName.isDisplayed();
-        addressFName.click();
-        addressFName.sendKeys(lastName);
+            lastNameTextBox.isDisplayed();
+            lastNameTextBox.clear();
+            lastNameTextBox.click();
+            lastNameTextBox.sendKeys(lastName);
     }
         return this;
     }
