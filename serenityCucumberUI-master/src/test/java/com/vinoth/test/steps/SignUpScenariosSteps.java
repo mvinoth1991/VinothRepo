@@ -44,7 +44,7 @@ public class SignUpScenariosSteps {
 
     @When("^I click on register new account (.*)$")
     public void iClickOnRegisterNewAccountEmailID(String ID) throws Throwable {
-        loginPage.enterEmailID(ID);
+        loginPage.enterSignupEmailID(ID);
         loginPage.clickOnCreateAccount();
         //throw new PendingException();
     }
