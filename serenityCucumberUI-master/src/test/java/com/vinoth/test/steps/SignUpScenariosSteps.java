@@ -23,9 +23,8 @@ public class SignUpScenariosSteps {
     LoginPage loginPage;
     HOOQHomePage hooqHomePage;
 
-
     WebDriver driver;
-
+    //HOOQHomePage hooqHomePage = new HOOQHomePage();
     HashMap map= new HashMap();
 
 

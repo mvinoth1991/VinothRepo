@@ -2,6 +2,7 @@ package com.vinoth.test.pages;
 
 import jline.internal.Log;
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -46,10 +47,6 @@ public LoginPage clickOnCreateAccount()
     Log.info("Clicking on submit button");
     createAnAccountBtn.isDisplayed();
     createAnAccountBtn.click();
-    if(alertDangerMsg.getText().equals(alertMsg)){
-        Log.info("You may have multiple browser windows open using the same identity, or\n" +
-                "    someone someone has already reqisterd using your email id.");
-    }
     return this;
 }
 

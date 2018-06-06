@@ -3,8 +3,7 @@ package com.vinoth.test.pages;
 import jline.internal.Log;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
@@ -47,9 +46,10 @@ public class HOOQHomePage extends PageObject {
     @FindBy(id = "account-creation_form")
     private WebElement personalInfoForm;
 
-    LoginPage loginPage = new LoginPage();
+    //LoginPage loginPage = new LoginPage();
 
     public HOOQHomePage verifyUIElements(){
+        waitFor(personalInfoForm);
         personalInfoForm.isDisplayed();
         accountCreationSection.isDisplayed();
         accountCreationSection.getText().contains(personalInfoSection);
