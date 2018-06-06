@@ -31,21 +31,9 @@ public class SignUpScenariosSteps {
 
     @Given("^I have user details for sign in$")
     public void iHaveUserDetailsForSignUpEmailPasswordName() throws Throwable {
-        homePage.openBrowser();
+      //  homePage.openBrowser();
+        homePage.open();
         homePage.clickOnLogin();
-    }
-    
-    @Then("^I should be able to enter details for registration <gender> <fname><lname><pwd><day><month><year> account page$")
-    public void iShouldBeAbleToEnterDetailsForRegistrationGenderFnameLnamePwdDayMonthYearAccountPage(String gender, String fname, String lname, String pwd, String day, String month, String year) throws Throwable {
-        hooqHomePage.verifyUIElements();
-        hooqHomePage.selectRadioButton(gender);
-        hooqHomePage.enterFirstName(fname);
-        hooqHomePage.enterLastName(lname);
-        hooqHomePage.enterPassword(pwd);
-        hooqHomePage.enterDay(day);
-        hooqHomePage.enterMonth(month);
-        hooqHomePage.enterYear(year);
-        throw new PendingException();
     }
 
     @And("^user should be able to sign up successfully$")
@@ -54,10 +42,24 @@ public class SignUpScenariosSteps {
         throw new PendingException();
     }
 
-    @When("^I click on register new account <emailID>$")
+    @When("^I click on register new account (.*)$")
     public void iClickOnRegisterNewAccountEmailID(String ID) throws Throwable {
         loginPage.enterEmailID(ID);
         loginPage.clickOnCreateAccount();
+        throw new PendingException();
+    }
+
+
+    @Then("^I should be able to enter details for registration (.*) (.*) (.*) (.*) (.*) (.*) (.*) account page$")
+    public void iShouldBeAbleToEnterDetailsForRegistration(String gender, String fname, String lname, String pwd, String day, String month, String year) throws Throwable {
+        hooqHomePage.verifyUIElements();
+        hooqHomePage.selectRadioButton(gender);
+        hooqHomePage.enterFirstName(fname);
+        hooqHomePage.enterLastName(lname);
+        hooqHomePage.enterPassword(pwd);
+        hooqHomePage.enterDay(day);
+        hooqHomePage.enterMonth(month);
+        hooqHomePage.enterYear(year);
         throw new PendingException();
     }
 }

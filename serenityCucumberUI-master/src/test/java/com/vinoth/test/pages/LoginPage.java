@@ -1,12 +1,15 @@
 package com.vinoth.test.pages;
 
 import jline.internal.Log;
+import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.sql.Timestamp;
 
-public class LoginPage extends HomePage {
+public class LoginPage extends PageObject {
+
+
     private String enteredEmailid;
     @FindBy(xpath = "//li[@class='nav-logout']")
     private WebElement logoutBtn;

@@ -1,15 +1,17 @@
 package com.vinoth.test.pages;
 
 import jline.internal.Log;
+import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+import java.sql.Timestamp;
 import java.util.List;
 
-public class HOOQHomePage extends LoginPage {
+public class HOOQHomePage extends PageObject {
 
     private static String personalInfoSection="Your personal information";
     private static String addressSection="Your personal information";
@@ -65,6 +67,12 @@ public class HOOQHomePage extends LoginPage {
             break;
     }
         return this;
+    }
+
+    public static String getRandomNumber() {
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        long randomLong=timestamp.getTime();
+        return String.valueOf(randomLong);
     }
     public HOOQHomePage enterFirstName(String firstName)
     {

@@ -2,6 +2,9 @@ package com.vinoth.test.pages;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import net.serenitybdd.core.pages.PageObject;
+import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -12,8 +15,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-
-public class HomePage {
+@DefaultUrl("http://automationpractice.com/index.php")
+public class HomePage extends PageObject {
     private Map<String, String> data;
     private WebDriver driver;
     private int timeout = 15;
