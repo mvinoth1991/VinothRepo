@@ -64,7 +64,7 @@ public class SignUpScenariosSteps {
         hooqHomePage.enterFirstName(firstname);
         hooqHomePage.enterLastName(lastname);
         hooqHomePage.enterAddress();
-        hooqHomePage.enterLastName(city);
+        hooqHomePage.enterCity(city);
         hooqHomePage.enterState(state);
         hooqHomePage.enterPostalCode();
         hooqHomePage.enterCountry(country);

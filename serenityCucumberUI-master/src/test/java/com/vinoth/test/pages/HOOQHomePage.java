@@ -6,13 +6,9 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
  import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
-import java.sql.Timestamp;
-import java.util.List;
 
-import static java.lang.String.*;
 
 public class HOOQHomePage extends PageObject {
 
@@ -51,7 +47,7 @@ public class HOOQHomePage extends PageObject {
     @FindBy(id="postcode")
     private WebElement postCodeTextBox;
 
-    @FindBy(id = "phone")
+    @FindBy(id = "phone_mobile")
     private WebElement phoneNumber;
 
     @FindBy(id="address1")
@@ -83,10 +79,11 @@ public class HOOQHomePage extends PageObject {
         return this;
     }
 
-    public static String getRandomNumber() {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        long randomLong=timestamp.getTime();
-        return valueOf(randomLong);
+    public String generateRandomInteger(int lengthOfStr) {
+
+        String number =RandomStringUtils.randomNumeric(lengthOfStr);
+        Log.info("Randomly generated integer of length "+lengthOfStr + " is - "+number);
+        return number;
     }
     public HOOQHomePage enterFirstName(String firstName)
     {
@@ -169,7 +166,7 @@ public class HOOQHomePage extends PageObject {
     public HOOQHomePage enterPostalCode(){//value should not be more than 5
         postCodeTextBox.isDisplayed();
         postCodeTextBox.click();
-        postCodeTextBox.sendKeys(getRandomNumber().substring(5));
+        postCodeTextBox.sendKeys("19"+generateRandomInteger(3));
         return this;
     }
 
@@ -182,7 +179,7 @@ public class HOOQHomePage extends PageObject {
     public HOOQHomePage enterMobileNumber(){
         phoneNumber.isDisplayed();
         phoneNumber.click();
-        phoneNumber.sendKeys(getRandomNumber().substring(8));
+        phoneNumber.sendKeys(generateRandomInteger(8));
         return this;
     }
 
