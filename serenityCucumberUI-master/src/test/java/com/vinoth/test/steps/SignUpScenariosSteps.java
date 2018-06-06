@@ -10,6 +10,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.yecht.Data;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -45,12 +46,13 @@ public class SignUpScenariosSteps {
     public void iClickOnRegisterNewAccountEmailID(String ID) throws Throwable {
         loginPage.enterEmailID(ID);
         loginPage.clickOnCreateAccount();
-        throw new PendingException();
+        //throw new PendingException();
     }
 
 
-    @Then("^I should be able to enter details for registration (.*) (.*) (.*) (.*) (.*) (.*) (.*) account page$")
-    public void iShouldBeAbleToEnterDetailsForRegistration(String gender, String fname, String lname, String pwd, String day, String month, String year) throws Throwable {
+    @Then("^I should be able to enter details for registration (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) account page$")
+    public void iShouldBeAbleToEnterDetailsForRegistration(String gender, String fname, String lname, String pwd, String day, String month, String year, String firstname, String lastname, String city,
+                                                           String country, String state) throws Throwable {
         hooqHomePage.verifyUIElements();
         hooqHomePage.selectRadioButton(gender);
         hooqHomePage.enterFirstName(fname);
@@ -59,6 +61,16 @@ public class SignUpScenariosSteps {
         hooqHomePage.enterDay(day);
         hooqHomePage.enterMonth(month);
         hooqHomePage.enterYear(year);
-        throw new PendingException();
+        hooqHomePage.enterFirstName(firstname);
+        hooqHomePage.enterLastName(lastname);
+        hooqHomePage.enterAddress();
+        hooqHomePage.enterLastName(city);
+        hooqHomePage.enterState(state);
+        hooqHomePage.enterPostalCode();
+        hooqHomePage.enterCountry(country);
+        hooqHomePage.enterMobileNumber();
+        hooqHomePage.enterAliasAddress();
+        hooqHomePage.clickOnRegister();
+        //throw new PendingException();
     }
 }
