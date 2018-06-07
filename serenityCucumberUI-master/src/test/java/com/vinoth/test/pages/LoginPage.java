@@ -41,16 +41,16 @@ public LoginPage enterSignupEmailID(String emailID)
 {
     Log.info("Entering ID in Username field");
     emailSignUpTextBox.isDisplayed();
-    this.enteredEmailid= emailID+getRandomNumber().substring(3)+"@gmail.com";
+    enteredEmailid= emailID+getRandomNumber().substring(3)+"@gmail.com";
     emailSignUpTextBox.sendKeys(enteredEmailid);
     Log.info("ID entered successfully");
     return this;
 }
 
-public LoginPage enterSiginEmailID(String enteredEmailid){
+public LoginPage enterSiginEmailID(String emailID){
     Log.info("Entering Email ID");
     emailSignInTextBox.isDisplayed();
-    emailSignInTextBox.sendKeys(enteredEmailid);
+    emailSignInTextBox.sendKeys(emailID);
     Log.info("ID entered successfully");
     return this;
 }
@@ -79,11 +79,11 @@ public LoginPage clickSubmit(){
 }
 
 
-public LoginPage clickOnLogout()
+/*public LoginPage clickOnLogout()
 {
     Log.info("Trying to click on Logout");
     logoutBtn.isDisplayed();
     logoutBtn.click();
     return this;
-}
+}*/
 }

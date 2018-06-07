@@ -1,5 +1,6 @@
 package com.vinoth.test.steps;
 
+import com.vinoth.test.pages.AfterLoginPage;
 import com.vinoth.test.pages.HOOQHomePage;
 import com.vinoth.test.pages.HomePage;
 import com.vinoth.test.pages.LoginPage;
@@ -23,6 +24,7 @@ public class SignUpScenariosSteps {
     HomePage homePage ;
     LoginPage loginPage;
     HOOQHomePage hooqHomePage;
+    AfterLoginPage afterLoginPage;
 
     WebDriver driver;
     //HOOQHomePage hooqHomePage = new HOOQHomePage();
@@ -36,9 +38,10 @@ public class SignUpScenariosSteps {
         homePage.clickOnLogin();
     }
 
-    @And("^user should be able to sign up successfully$")
-    public void userShouldBeAbleToSignUpSuccessfully() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    @And("^user should be able to sign up successfully(.*)(.*)$")
+    public void userShouldBeAbleToSignUpSuccessfully(String fname, String lname) throws Throwable {
+        afterLoginPage.verifyLoggedin(fname,lname);
+        afterLoginPage.sigOut();
         throw new PendingException();
     }
 
@@ -50,8 +53,8 @@ public class SignUpScenariosSteps {
     }
 
 
-    @Then("^I should be able to enter details for registration (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) account page$")
-    public void iShouldBeAbleToEnterDetailsForRegistration(String gender, String fname, String lname, String pwd, String day, String month, String year, String firstname, String lastname, String city,
+    @Then("^I should be able to enter details for registration (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) (.*) account page$")
+    public void iShouldBeAbleToEnterDetailsForRegistration(String gender, String fname, String lname, String pwd, String day, String month, String year,String city,
                                                            String country, String state) throws Throwable {
         hooqHomePage.verifyUIElements();
         hooqHomePage.selectRadioButton(gender);
@@ -61,8 +64,6 @@ public class SignUpScenariosSteps {
         hooqHomePage.enterDay(day);
         hooqHomePage.enterMonth(month);
         hooqHomePage.enterYear(year);
-        hooqHomePage.enterFirstName(firstname);
-        hooqHomePage.enterLastName(lastname);
         hooqHomePage.enterAddress();
         hooqHomePage.enterCity(city);
         hooqHomePage.enterState(state);
@@ -73,4 +74,12 @@ public class SignUpScenariosSteps {
         hooqHomePage.clickOnRegister();
         //throw new PendingException();
     }
+
+    @Then("^verify user is logged in successfully (.*) (.*) $")
+    public void verifyUserIsLoggedInSuccessfully(String fname,String lname) throws Throwable {
+        afterLoginPage.verifyLoggedin(fname,lname);
+        afterLoginPage.sigOut();
+        //throw new PendingException();
+    }
+
 }

@@ -8,11 +8,13 @@ import org.openqa.selenium.support.ui.Select;
  import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import static constants.StoryContextKey.elastName;
 
 
 public class HOOQHomePage extends PageObject {
 
     private static String personalInfoSection="Your personal information";
+    private String saveLastName,saveFirstName,savePassword;
 
     @FindBy(id = "uniform-id_gender1")
     private WebElement genderRadioButton;
@@ -88,32 +90,18 @@ public class HOOQHomePage extends PageObject {
     public HOOQHomePage enterFirstName(String firstName)
     {
         Log.info("Entering first name");
-        if(firstName.contains("per")){
         firstNameTextBox.isDisplayed();
         firstNameTextBox.click();
         firstNameTextBox.sendKeys(firstName);
-    }
-    else{
-            addressFName.isDisplayed();
-            addressFName.clear();
-            addressFName.click();
-            addressFName.sendKeys(firstName);
-        }
         return this;
         }
 
     public HOOQHomePage enterLastName(String lastName) {
         Log.info("Entering last name ");
-        if(lastName.contains("per")){
         lastNameTextBox.isDisplayed();
         lastNameTextBox.click();
         lastNameTextBox.sendKeys(lastName);
-    }else{
-            lastNameTextBox.isDisplayed();
-            lastNameTextBox.clear();
-            lastNameTextBox.click();
-            lastNameTextBox.sendKeys(lastName);
-    }
+        saveFirstName = lastName ;
         return this;
     }
 
@@ -186,6 +174,7 @@ public class HOOQHomePage extends PageObject {
     public  HOOQHomePage enterAliasAddress(){
         aliasAddressTextBox.isDisplayed();
         aliasAddressTextBox.click();
+        aliasAddressTextBox.clear();
         aliasAddressTextBox.sendKeys(generateRandomString(15));
         return this;
     }
