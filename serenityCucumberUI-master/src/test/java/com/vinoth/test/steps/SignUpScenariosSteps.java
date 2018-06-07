@@ -42,7 +42,7 @@ public class SignUpScenariosSteps {
     public void userShouldBeAbleToSignUpSuccessfully(String fname, String lname) throws Throwable {
         afterLoginPage.verifyLoggedin(fname,lname);
         afterLoginPage.sigOut();
-        throw new PendingException();
+//        throw new PendingException();
     }
 
     @When("^I click on register new account (.*)$")

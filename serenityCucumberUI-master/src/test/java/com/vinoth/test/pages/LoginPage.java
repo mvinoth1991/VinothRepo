@@ -15,6 +15,9 @@ public class LoginPage extends PageObject {
     @FindBy(xpath = "//input[@id='email_create']")
     private WebElement emailSignUpTextBox;
 
+    @FindBy(xpath = "//div[@class='alert alert-danger']")
+    private WebElement authenticationFailure;
+
     @FindBy(xpath = "//input[@id='email']")
     private WebElement emailSignInTextBox;
 
@@ -29,6 +32,7 @@ public class LoginPage extends PageObject {
 
     @FindBy(id="SubmitLogin")
     private WebElement clickSubmit;
+    private static String alertMsgSignIn="Authentication failed.";
 
     public static String alertMsg="An account using this email address has already been registered. Please enter a valid password or request a new one. ";
     public static String getRandomNumber() {
@@ -50,6 +54,7 @@ public LoginPage enterSignupEmailID(String emailID)
 public LoginPage enterSiginEmailID(String emailID){
     Log.info("Entering Email ID");
     emailSignInTextBox.isDisplayed();
+    emailSignInTextBox.clear();
     emailSignInTextBox.sendKeys(emailID);
     Log.info("ID entered successfully");
     return this;
@@ -58,6 +63,7 @@ public LoginPage enterSiginEmailID(String emailID){
 public LoginPage enterPassword(String password){
     Log.info("Entering Password");
     passwordTextBox.isDisplayed();
+    passwordTextBox.clear();
     passwordTextBox.sendKeys(password);
     Log.info("Password entered successfully");
     return this;
@@ -75,7 +81,13 @@ public LoginPage clickSubmit(){
    Log.info("Click submit button");
    clickSubmit.isDisplayed();
    clickSubmit.click();
-   return this;
+   try{
+   if(authenticationFailure.getText().contains(alertMsgSignIn)){
+   }}
+   catch(Exception e){
+       Log.info("Username of Passwored entered is incorrect. Please check");
+   }
+    return this;
 }
 
 
