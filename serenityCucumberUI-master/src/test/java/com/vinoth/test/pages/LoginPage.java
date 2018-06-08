@@ -33,6 +33,7 @@ public class LoginPage extends PageObject {
     @FindBy(id="SubmitLogin")
     private WebElement clickSubmit;
     private static String alertMsgSignIn="Authentication failed.";
+    private static String invalidEmailID="Invalid email address.";
 
     public static String alertMsg="An account using this email address has already been registered. Please enter a valid password or request a new one. ";
     public static String getRandomNumber() {
@@ -82,10 +83,10 @@ public LoginPage clickSubmit(){
    clickSubmit.isDisplayed();
    clickSubmit.click();
    try{
-   if(authenticationFailure.getText().contains(alertMsgSignIn)){
+   if((authenticationFailure.getText().contains(alertMsgSignIn))||(authenticationFailure.getText().contains(invalidEmailID))){
    }}
    catch(Exception e){
-       Log.info("Username of Passwored entered is incorrect. Please check");
+       Log.info("EmailID or Password entered is incorrect. Please check");
    }
     return this;
 }

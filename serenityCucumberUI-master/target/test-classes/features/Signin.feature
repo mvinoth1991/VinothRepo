@@ -11,3 +11,4 @@ Examples: SignIn
   |paswd|emailID|fname|lname|
 |Test@123|testingautomation1234@gmail.com|Test|Automation|
   |Test@123|teautomation1234@gmail.com|Test|Automation|
+  |Test@123|teautomation1234|Test|Automation|
